@@ -42,7 +42,7 @@ public class StudentServiceApplication {
 			http.csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
-				.antMatchers("/student/get/*", "/student/login", "/student/eligibility").permitAll()
+				.antMatchers("/student/get/*", "/student/login", "/student/college/*").permitAll()
 				.anyRequest().authenticated();
 		}
 	}
